@@ -26,8 +26,8 @@ io.sockets.on('connection', function(socket) {
 	// This initiation is emmitted by our web clients
 	// we store the reference to our socket ids 
 	// MAP [Key: Username + Applicatoin, Value: SocketID]
-	socket.on('init', function(username, application) { 
-		socksRef[username + application] = socket.id;
+	socket.on('init', function(data) { 
+		socksRef[data.username + data.application] = socket.id;
 	});
 
 	// Here we recieve message from python clients
@@ -45,7 +45,7 @@ io.sockets.on('connection', function(socket) {
 		socksRef[user + app].emit(
 			'update', 
 			{
-				update: python
+				update: pythonClientData
 			}
 		);
 	});

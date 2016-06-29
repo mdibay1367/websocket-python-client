@@ -8,13 +8,19 @@
 </head>
 <body>
 	<script>
-	  var socket = io('http://localhost');
+	  // The socket address is the address that node server is running on
+	  var socket = io('http://localhost:8080');
 	  socket.on('update', function (pythonClientUpdate) {
 	    console.log('New update recieved: ' + pythonClientUpdate);
 	    /*
 			Here you can just pass the pythonClientUpdate.update
 			to the Chart library to update the Chart 
 	    */
+	  });
+	  socket.emit('init', function() {
+	  	//data is a json 
+	  	// data : {username: "username", application: "application"}
+	  	return false; 
 	  });
 	</script>
 	<!-- Here you can add your chart library -->
