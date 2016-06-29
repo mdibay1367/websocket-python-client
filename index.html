@@ -1,0 +1,24 @@
+<!-- 
+	Author: M.Dibay 
+	Date: June, 28, 16
+--> 
+<html>
+<head>
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+</head>
+<body>
+	<script>
+	  var socket = io('http://localhost');
+	  socket.on('update', function (pythonClientUpdate) {
+	    console.log('New update recieved: ' + pythonClientUpdate);
+	    /*
+			Here you can just pass the pythonClientUpdate.update
+			to the Chart library to update the Chart 
+	    */
+	  });
+	</script>
+	<!-- Here you can add your chart library -->
+</body>
+</html>
+
+

@@ -1,0 +1,14 @@
+{
+  "name": "websocket-app.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "M.Dibay",
+  "license": "",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
