@@ -1,0 +1,26 @@
+<!-- 
+	Author: Mohammad Dibay 
+	Date: June, 26, 16
+--> 
+<html>
+<body>
+  <script>
+    var valueData;
+    var ws = new WebSocket("ws://localhost:9090");
+	ws.onopen = function() {
+  		// Web Socket is connected, send data using send()
+	    ws.send(JSON.stringify({client: "web", app: "app1", user: ""}));
+	    console.log("Message is sent...");
+	};
+	ws.onmessage = function (evt) {
+  		var data = evt.data;
+		valueData= JSON.parse(data).value;
+	    // now you can update your chart based on this data. 
+	    // data is coming from the python client 
+</script>
+
+	<!-- Here you can add your chart library -->
+</body>
+</html>
+
+
